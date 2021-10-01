@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>DoVang Membership </title>
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+
+   <style type="text/css">
+     header{
+       background-color: lightgray;
+       font-size:20px;
+       padding:20px;
+     }
+     header, .form-group{
+       margin-bottom: 3%;
+     }
+
+     .form-group{
+       width:50%;
+     }
+     #body{
+       margin-left:3%;
+       margin-right:3%;
+     }
+     .form-control{
+       margin: 8px;
+     }
+     label{
+       font-size:20px;
+     }
+   </style>
+ </head>
+ <body ng-app="application" ng-controller="AppCtrl">
+    <header>
+      <div id="left_header">DoVang Membership</div>
+    </header>
+
+
+    <div id="body">
+      <div class="form-group">
+        <label>멤버 추가</label>
+        <h5 style="color:green;margin-bottom:2%" id="success_add">{{init_ab}}</h5>
+        <br>
+        멤버 이름: <input class="form-control" type="text" placeholder="Ex: 멤버 이름" ng-model="memberid">
+        <input id="initAB" type="submit" value="추가" class="btn btn-primary" ng-click="initAB()">
+      </div>
+
+      <hr>
+
+
+      <div class="form-group">
+        <label>멤버 조회</label>
+        <h5 style="color:green;margin-bottom:2%" id="success_query">{{query_ab}}</h5>
+        <p><input class="form-control" type="text" placeholder="Ex: 이름" ng-model="memberid">
+        <input id="queryAB" type="submit" value="조회" class="btn btn-primary" ng-click="queryAB()"></p>
+      </div>
+
+      <div class="form-group">
+        <label>멤버 제거</label>
+        <h5 style="color:green;margin-bottom:2%" id="success_delete">{{delete_ab}}</h5>
+        <p><input class="form-control" type="text" placeholder="Ex: 이름" ng-model="memberid">
+        <input id="deleteAB" type="submit" value="제거" class="btn btn-primary" ng-click="deleteAB()"></p>
+      </div>
+
+      <div class="form-group">
+        <label>포인트 변경</label>
+        <h5 style="color:green;margin-bottom:2%" id="success_update">{{update_ab}}</h5>
+        <p><input class="form-control" type="text" placeholder="Ex: 이름" ng-model="member.name">
+        <p><input class="form-control" type="text" placeholder="Ex: 포인트 수" ng-model="member.point">
+        <input id="updateAB" type="submit" value="변경" class="btn btn-primary" ng-click="updateAB()"></p>
+      </div>
+
+    </div>
+  </body>
+  <script type="text/javascript" src="app.js"> </script>
+ </html>
+ 
