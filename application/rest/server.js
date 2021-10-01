@@ -20,12 +20,12 @@ app.get('/member/query', function (req, res) {
 
 app.get('/member/delete', function (req, res) {
     let args = [req.query.name];
-    sdk.send(true, 'DeleteMember', args, res);
+    sdk.send(false, 'DeleteMember', args, res);
 });
 
 app.get('/point/update', function (req, res) {
     let args = [req.query.name, req.query.point];
-    sdk.send(true, 'UpdateMemberPoint', args, res);
+    sdk.send(false, 'UpdateMemberPoint', args, res);
 });
 
 app.use(express.static(path.join(__dirname, '../client')));
