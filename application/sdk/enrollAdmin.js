@@ -10,7 +10,7 @@ async function main() {
         // load the network configuration
         const ccpPath = path.resolve(__dirname, '..', 'connection-org1.json');
         const ccp = JSON.parse(fs.readFileSync(ccpPath, 'utf8'));
-        
+
         // Create a new CA client for interacting with the CA.
         const caInfo = ccp.certificateAuthorities['ca.org1.example.com'];
         const caTLSCACerts = caInfo.tlsCACerts.pem;
@@ -19,7 +19,7 @@ async function main() {
         const walletPath = path.join(process.cwd(), '..', 'wallet');
         const wallet = await Wallets.newFileSystemWallet(walletPath);
         console.log(`Wallet path: ${walletPath}`);
-        
+
         // Check to see if we've already enrolled the admin user.
         const identity = await wallet.get('admin');
         if (identity) {
